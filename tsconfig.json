@@ -11,8 +11,16 @@
     "outDir": "./dist",
     "target": "ESNext",
     "moduleResolution": "Node",
-    "module": "ESNext"
+    "module": "ESNext",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": ["src"],
-  "exclude": ["node_modules", "src/**/*.test.tsx", "src/**/*.stories.tsx", "src/**/__tests__"]
+  "exclude": [
+    "node_modules",
+    "src/**/*.test.tsx",
+    "src/**/*.stories.tsx",
+    "src/**/__tests__"
+  ]
 }

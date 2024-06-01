@@ -1,3 +1,4 @@
+import { cva } from '@/lib/cva';
 import { type ComponentProps, forwardRef } from 'react';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'tertiary';
