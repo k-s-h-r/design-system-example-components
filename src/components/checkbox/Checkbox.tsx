@@ -76,7 +76,7 @@ const _boxStyles = cva({
     isSelected: {
       false: [
         '[--color:theme(colors.solid-grey.900)]',
-        'group-pressed:[--color:theme(colors.solid-grey.1000)]',
+        'group-pressed:[--color:theme(colors.black)]',
         'bg-white border-[--color]',
       ],
       true: [
