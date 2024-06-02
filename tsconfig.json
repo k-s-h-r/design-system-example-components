@@ -20,7 +20,7 @@
   "exclude": [
     "node_modules",
     "src/**/*.test.tsx",
-    "src/**/*.stories.tsx",
+    //"src/**/*.stories.tsx",
     "src/**/__tests__"
   ]
 }
