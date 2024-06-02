@@ -36,10 +36,12 @@
     "lint:markup": "markuplint \"./src/**/*.{jsx,tsx}\"",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
-    "storybook:test": "test-storybook"
+    "storybook:test": "test-storybook",
+    "test": "vitest"
   },
   "dependencies": {
     "@digital-go-jp/tailwind-theme-plugin": "^0.1.15",
+    "@radix-ui/react-slot": "^1.0.2",
     "cva": "^1.0.0-beta.1",
     "react": "^18.3.1",
     "react-aria-components": "^1.2.1",
@@ -59,18 +61,21 @@
     "@storybook/blocks": "^8.1.4",
     "@storybook/react": "^8.1.4",
     "@storybook/react-vite": "^8.1.4",
+    "@testing-library/react": "^15.0.7",
     "@tsconfig/node20": "^20.1.4",
     "@types/node": "^20.12.12",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react-swc": "^3.7.0",
     "autoprefixer": "^10.4.19",
+    "jsdom": "^24.1.0",
     "markuplint": "^4.9.0",
     "postcss": "^8.4.38",
     "storybook": "^8.1.4",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.4.5",
-    "vite": "^5.2.12"
+    "vite": "^5.2.12",
+    "vitest": "^1.6.0"
   },
   "engines": {
     "node": ">=18"
