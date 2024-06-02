@@ -1,6 +1,6 @@
+import { Button } from '@/components';
 import React from 'react';
 import { Form } from 'react-aria-components';
-import { Button } from '../button';
 import { Checkbox, CheckboxGroup } from './';
 
 export default {

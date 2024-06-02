@@ -1,7 +1,7 @@
+import { Button } from '@/components';
 import type { Meta } from '@storybook/react';
 import React from 'react';
 import { Form } from 'react-aria-components';
-import { Button } from '../button';
 import { Select, SelectItem, SelectSection } from './';
 
 const meta: Meta<typeof Select> = {
@@ -18,6 +18,7 @@ const meta: Meta<typeof Select> = {
 
 export default meta;
 
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export const Example = (args: any) => (
   <Select {...args}>
     <SelectItem>Chocolate</SelectItem>
@@ -27,11 +28,13 @@ export const Example = (args: any) => (
   </Select>
 );
 
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export const DisabledItems = (args: any) => <Example {...args} />;
 DisabledItems.args = {
   disabledKeys: ['mint'],
 };
 
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export const Sections = (args: any) => (
   <Select {...args}>
     <SelectSection title='Fruit'>
@@ -61,6 +64,7 @@ Sections.args = {
   label: 'Preferred fruit or vegetable',
 };
 
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export const Validation = (args: any) => (
   <Form className='flex flex-col gap-2 items-start'>
     <Example {...args} />

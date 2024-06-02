@@ -1,7 +1,6 @@
+import { Description, Label, RequirementBadge } from '@/components';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { RequirementBadge } from '../';
-import { Description, Label } from '../field';
 import { Checkbox, CheckboxGroup } from './Checkbox';
 
 const meta = {

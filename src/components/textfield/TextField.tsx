@@ -1,3 +1,4 @@
+import { Description, FieldError, Label } from '@/components';
 import { compose, cva, cx, focusRing } from '@/lib/cva';
 import type { VariantProps } from 'cva';
 import type React from 'react';
@@ -8,7 +9,6 @@ import {
   type TextFieldProps as _TextFieldProps,
   composeRenderProps,
 } from 'react-aria-components';
-import { Description, FieldError, Label } from '../field';
 
 export interface TextFieldProps extends _TextFieldProps {
   label?: string | React.ReactNode;

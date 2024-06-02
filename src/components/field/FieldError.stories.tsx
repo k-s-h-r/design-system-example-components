@@ -1,6 +1,6 @@
+import { TextField } from '@/components';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { TextField } from '../textfield';
 import { FieldError } from './FieldError';
 
 const meta = {

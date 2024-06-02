@@ -1,8 +1,7 @@
+import { Description, FieldError, Label, RequirementBadge } from '@/components';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { RequirementBadge } from '../';
-import { Description, FieldError, Label } from '../field';
-import { Radio, RadioGroup } from './Radio';
+import { Radio, RadioGroup } from './';
 
 const meta = {
   title: 'Component/Radio',
@@ -24,15 +23,9 @@ export const Example: Story = {
           ラベル<RequirementBadge isOptional={true}>任意</RequirementBadge>
         </Label>
         <div className='flex flex-col'>
-          <Radio name='x' value='1'>
-            選択肢1
-          </Radio>
-          <Radio name='x' value='2'>
-            選択肢2
-          </Radio>
-          <Radio name='x' value='3'>
-            選択肢3
-          </Radio>
+          <Radio value='1'>選択肢1</Radio>
+          <Radio value='2'>選択肢2</Radio>
+          <Radio value='3'>選択肢3</Radio>
         </div>
       </RadioGroup>
     );
@@ -50,13 +43,11 @@ export const Disabled: Story = {
           ラベル<RequirementBadge isOptional={true}>任意</RequirementBadge>
         </Label>
         <div className='flex flex-col'>
-          <Radio name='x' value='1'>
-            選択肢1
-          </Radio>
-          <Radio name='x' value='2' isDisabled={true}>
+          <Radio value='1'>選択肢1</Radio>
+          <Radio value='2' isDisabled={true}>
             選択肢2
           </Radio>
-          <Radio name='x' value='3' isDisabled={true}>
+          <Radio value='3' isDisabled={true}>
             選択肢3
           </Radio>
         </div>
@@ -76,13 +67,13 @@ export const Size: Story = {
           ラベル<RequirementBadge isOptional={true}>任意</RequirementBadge>
         </Label>
         <div className='flex flex-col'>
-          <Radio name='x' size='small' value='1'>
+          <Radio size='small' value='1'>
             smaill
           </Radio>
-          <Radio name='x' size='medium' value='2'>
+          <Radio size='medium' value='2'>
             medium
           </Radio>
-          <Radio name='x' size='large' value='3'>
+          <Radio size='large' value='3'>
             large
           </Radio>
         </div>

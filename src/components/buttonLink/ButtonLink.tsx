@@ -1,8 +1,8 @@
+import { buttonVariants } from '@/components';
 import { cva, cx } from '@/lib/cva';
 import type { VariantProps } from 'cva';
 import { forwardRef } from 'react';
 import { Link, type LinkProps, composeRenderProps } from 'react-aria-components';
-import { buttonVariants } from '../button';
 
 interface ButtonLinkProps extends LinkProps, VariantProps<typeof buttonVariants> {}
 

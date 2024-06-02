@@ -1,12 +1,12 @@
-export { Accordion, AccordionSummary, AccordionDefaultIcon } from './accordion/Accordion';
+export { Accordion, AccordionSummary, AccordionDefaultIcon } from './Accordion';
 export { Breadcrumbs, BreadcrumbItem } from './breadcrumbs/Breadcrumbs';
-export { Button, buttonVariants } from './button';
-export { ButtonLink } from './buttonLink';
-export { Checkbox } from './checkbox/Checkbox';
+export { Button, buttonVariants } from './Button';
+export { ButtonLink } from './ButtonLink';
+export { Checkbox } from './Checkbox';
 export { Dialog } from './dialog/Dialog';
 export { HamburgerButton } from './hamburgerButton/HamburgerButton';
-export { Label, FieldGroup, Input, TextArea, FieldError } from './field';
-export { Link, linkVariants } from './link/Link';
+export { Label, FieldGroup, Input, TextArea, FieldError, Description } from './Field';
+export { Link, linkVariants } from './Link';
 export { Ol, olStyle } from './ol/Ol';
 export {
   Pagination,
@@ -19,11 +19,11 @@ export {
   PaginationEllipsis,
   paginationItemStyle,
 } from './pagination/Pagination';
-export { Radio } from './radio';
+export { Radio } from './Radio';
 export { RequirementBadge } from './requirementBadge/RequirementBadge';
 export { ScrollToTopButton, scrollToTopButtonStyle } from './scrollToTopButton/ScrollToTopButton';
-export { Select, SelectItem, SelectSection } from './select';
+export { Select, SelectItem, SelectSection } from './Select';
 export { Table, Thead, Tbody, Tr, Th, Td, thStyle, tdStyle } from './table/Table';
-export { TextField } from './textfield';
+export { TextField } from './TextField';
 export { Ul, ulStyle } from './ul/Ul';
-export { UtilityLink, utilityLinkVariants } from './utilityLink';
+export { UtilityLink, utilityLinkVariants } from './UtilityLink';

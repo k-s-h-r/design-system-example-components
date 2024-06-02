@@ -1,3 +1,4 @@
+import { Description, FieldError, Label } from '@/components';
 import { compose, cva, cx, focusRing } from '@/lib/cva';
 import type React from 'react';
 import {
@@ -10,9 +11,8 @@ import {
   type ValidationResult,
   composeRenderProps,
 } from 'react-aria-components';
-import { Description, FieldError, Label } from '../field';
-import { DropdownItem, DropdownSection, type DropdownSectionProps } from '../listbox';
-import { Popover } from '../popover';
+import { DropdownItem, DropdownSection, type DropdownSectionProps } from '../ListBox';
+import { Popover } from '../Popover';
 
 const _styles = cva({
   base: 'flex items-center text-start gap-4 w-full cursor-default border border-black/10 dark:border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] dark:shadow-none rounded-lg pl-3 pr-2 py-2 min-w-[150px] transition bg-gray-50 dark:bg-zinc-700',

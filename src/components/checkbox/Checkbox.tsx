@@ -1,3 +1,4 @@
+import { Description, FieldError, Label } from '@/components';
 import { compose, cva, cx, focusRing } from '@/lib/cva';
 import type { VariantProps } from 'cva';
 import React, { type ReactNode } from 'react';
@@ -9,7 +10,6 @@ import {
   type CheckboxProps as _CheckboxProps,
   composeRenderProps,
 } from 'react-aria-components';
-import { Description, FieldError, Label } from '../field';
 
 export interface CheckboxGroupProps extends Omit<_CheckboxGroupProps, 'children'> {
   label?: string | ReactNode;

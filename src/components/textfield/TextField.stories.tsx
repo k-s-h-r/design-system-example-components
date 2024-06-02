@@ -1,10 +1,9 @@
 import { Button } from '@/components';
+import { Description, FieldError, Input, Label, RequirementBadge, TextArea } from '@/components';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { Form } from 'react-aria-components';
-import { RequirementBadge } from '../';
-import { Description, FieldError, Input, Label, TextArea } from '../field';
-import { TextField } from './TextField';
+import { TextField } from './';
 
 const meta = {
   title: 'Component/TextField',
