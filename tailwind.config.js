@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{ts,tsx}'],
+  // 開発時のみstorybookでのダークモード切り替えのためにselectorを使用する
+  darkMode: process.env.NODE_ENV === 'production' ? undefined : ['selector', '[data-mode="dark"]'],
   theme: {
     extend: {
       fontFamily: {
