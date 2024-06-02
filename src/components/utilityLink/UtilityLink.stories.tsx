@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { UtilityLink } from './UtilityLink';
+import { UtilityLink } from './';
 
 const meta = {
   title: 'Component/UtilityLink',
@@ -20,6 +20,12 @@ export const Example: Story = {
         <UtilityLink href='https://www.digital.go.jp' target='_blank'>
           外部リンク
         </UtilityLink>
+
+        <UtilityLink href='#' isDisabled>
+          isDisabledのリンク
+        </UtilityLink>
+
+        <UtilityLink>hrefなしのリンク</UtilityLink>
       </div>
     );
   },

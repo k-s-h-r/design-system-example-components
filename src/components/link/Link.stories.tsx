@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { Link } from './Link';
+import { Link } from './';
 
 const meta = {
   title: 'Component/Link',
@@ -23,6 +23,19 @@ export const Example: Story = {
 
         <p>
           これは<Link href='#'>文中のリンク</Link>です。
+        </p>
+        <p>
+          これは
+          <Link href='#' isDisabled>
+            isDisabledのリンク
+          </Link>
+          です。
+        </p>
+
+        <p>
+          これは
+          <Link>hrefなしのリンク</Link>
+          です。
         </p>
       </div>
     );
