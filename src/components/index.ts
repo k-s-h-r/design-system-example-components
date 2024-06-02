@@ -4,11 +4,8 @@ export { Button, buttonVariants } from './button';
 export { ButtonLink } from './buttonLink';
 export { Checkbox } from './checkbox/Checkbox';
 export { Dialog } from './dialog/Dialog';
-export { ErrorText } from './errorText/ErrorText';
 export { HamburgerButton } from './hamburgerButton/HamburgerButton';
-export { Input } from './input/Input';
-export { Label } from './label/Label';
-export { Legend } from './legend/Legend';
+export { Label, FieldGroup, Input, TextArea, FieldError } from './field';
 export { Link, linkVariants } from './link/Link';
 export { Ol, olStyle } from './ol/Ol';
 export {
@@ -22,13 +19,11 @@ export {
   PaginationEllipsis,
   paginationItemStyle,
 } from './pagination/Pagination';
-export { Radio } from './radio/Radio';
+export { Radio } from './radio';
 export { RequirementBadge } from './requirementBadge/RequirementBadge';
 export { ScrollToTopButton, scrollToTopButtonStyle } from './scrollToTopButton/ScrollToTopButton';
-export { Select } from './select/Select';
-export { SupportText } from './supportText/SupportText';
+export { Select, SelectItem, SelectSection } from './select';
 export { Table, Thead, Tbody, Tr, Th, Td, thStyle, tdStyle } from './table/Table';
-export { Textarea } from './textarea/Textarea';
-export { TiledRadio, TiledRadioItem } from './tiledRadio/TiledRadio';
+export { TextField } from './textfield';
 export { Ul, ulStyle } from './ul/Ul';
 export { UtilityLink, utilityLinkVariants } from './utilityLink';

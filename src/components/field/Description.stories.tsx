@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { Label } from './Label';
+import { Description } from './Description';
 
 const meta = {
-  title: 'Component/Label',
-  component: Label,
+  title: 'Component/Field-Description',
+  component: Description,
   tags: ['autodocs'],
-} satisfies Meta<typeof Label>;
+} satisfies Meta<typeof Description>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -15,8 +15,7 @@ export const Example: Story = {
   render: () => {
     return (
       <div className='flex flex-col gap-8'>
-        <Label>ラベル</Label>
-        <Label isDisabled={true}>ラベル</Label>
+        <Description>サポートテキスト</Description>
       </div>
     );
   },

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { ErrorText, Legend, RequirementBadge, SupportText } from '../';
+import { RequirementBadge } from '../';
 import { Description, Label } from '../field';
 import { Checkbox, CheckboxGroup } from './Checkbox';
 

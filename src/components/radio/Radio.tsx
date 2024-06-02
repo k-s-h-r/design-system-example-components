@@ -109,7 +109,7 @@ export function Radio(props: RadioProps) {
     <_Radio
       {...rest}
       className={composeRenderProps(props.className, (className, renderProps) =>
-        radioStyles({ ...renderProps, size, className }),
+        cx(radioStyles({ ...renderProps, size, className })),
       )}
     >
       {(renderProps) => (

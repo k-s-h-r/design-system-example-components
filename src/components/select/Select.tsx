@@ -1,43 +1,77 @@
-import { type ComponentProps, forwardRef } from 'react';
+import { compose, cva, cx, focusRing } from '@/lib/cva';
+import type React from 'react';
+import {
+  Select as AriaSelect,
+  type SelectProps as AriaSelectProps,
+  Button,
+  ListBox,
+  type ListBoxItemProps,
+  SelectValue,
+  type ValidationResult,
+  composeRenderProps,
+} from 'react-aria-components';
+import { Description, FieldError, Label } from '../field';
+import { DropdownItem, DropdownSection, type DropdownSectionProps } from '../listbox';
+import { Popover } from '../popover';
 
-export type SelectProps = ComponentProps<'select'> & {
-  isError?: boolean;
-};
-
-export const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {
-  const { children, className, isError, ...rest } = props;
-
-  return (
-    <div className='relative min-w-80 max-w-full h-14'>
-      <select
-        className={`
-          size-full appearance-none rounded-8 bg-white px-4 py-3 text-std-16N-7 text-solid-grey-900
-          ${isError ? 'border-2 border-error-1' : 'border border-solid-grey-900'}
-          focus:border-transparent focus:outline focus:outline-4 focus:outline-focus-yellow
-          disabled:border-solid-grey-420 disabled:bg-solid-grey-50 disabled:text-solid-grey-600
-          ${className ?? ''}
-        `}
-        ref={ref}
-        {...rest}
-      >
-        {children}
-      </select>
-      <svg
-        aria-hidden={true}
-        className={`
-          pointer-events-none absolute right-4 top-1/2 -translate-y-1/2
-          ${rest.disabled ? 'text-solid-grey-600' : 'text-solid-grey-900'}
-        `}
-        fill='none'
-        height='16'
-        viewBox='0 0 16 16'
-        width='16'
-      >
-        <path
-          d='M13.3344 4.40002L8.00104 9.73336L2.66771 4.40002L1.73438 5.33336L8.00104 11.6L14.2677 5.33336L13.3344 4.40002Z'
-          fill='currentColor'
-        />
-      </svg>
-    </div>
-  );
+const _styles = cva({
+  base: 'flex items-center text-start gap-4 w-full cursor-default border border-black/10 dark:border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] dark:shadow-none rounded-lg pl-3 pr-2 py-2 min-w-[150px] transition bg-gray-50 dark:bg-zinc-700',
+  variants: {
+    isDisabled: {
+      false:
+        'text-gray-800 dark:text-zinc-300 hover:bg-gray-100 pressed:bg-gray-200 dark:hover:bg-zinc-600 dark:pressed:bg-zinc-500 group-invalid:border-red-600 forced-colors:group-invalid:border-[Mark]',
+      true: 'text-gray-200 dark:text-zinc-600 forced-colors:text-[GrayText] dark:bg-zinc-800 dark:border-white/5 forced-colors:border-[GrayText]',
+    },
+  },
 });
+const selectVariants = compose(focusRing, _styles);
+
+export interface SelectProps<T extends object> extends Omit<AriaSelectProps<T>, 'children'> {
+  label?: string;
+  description?: string;
+  errorMessage?: string | ((validation: ValidationResult) => string);
+  items?: Iterable<T>;
+  children: React.ReactNode | ((item: T) => React.ReactNode);
+}
+
+export function Select<T extends object>({
+  label,
+  description,
+  errorMessage,
+  children,
+  items,
+  ...props
+}: SelectProps<T>) {
+  return (
+    <AriaSelect
+      {...props}
+      className={composeRenderProps(props.className, (className, renderProps) =>
+        cx('group flex flex-col gap-1', className),
+      )}
+    >
+      {label && <Label>{label}</Label>}
+      <Button className={selectVariants}>
+        <SelectValue className='flex-1 text-sm placeholder-shown:italic' />
+        {/*<ChevronDown aria-hidden className="w-4 h-4 text-gray-600 dark:text-zinc-400 forced-colors:text-[ButtonText] group-disabled:text-gray-200 dark:group-disabled:text-zinc-600 forced-colors:group-disabled:text-[GrayText]" />*/}
+      </Button>
+      {description && <Description>{description}</Description>}
+      <FieldError>{errorMessage}</FieldError>
+      <Popover className='min-w-[--trigger-width]'>
+        <ListBox
+          items={items}
+          className='outline-none p-1 max-h-[inherit] overflow-auto [clip-path:inset(0_0_0_0_round_.75rem)]'
+        >
+          {children}
+        </ListBox>
+      </Popover>
+    </AriaSelect>
+  );
+}
+
+export function SelectItem(props: ListBoxItemProps) {
+  return <DropdownItem {...props} />;
+}
+
+export function SelectSection<T extends object>(props: DropdownSectionProps<T>) {
+  return <DropdownSection {...props} />;
+}

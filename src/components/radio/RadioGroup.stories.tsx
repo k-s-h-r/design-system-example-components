@@ -32,6 +32,7 @@ export const Default = {
   args: {},
 };
 
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export const Validation = (args: any) => (
   <Form className='flex flex-col gap-2 items-start'>
     <RadioGroup {...args} />
