@@ -6,7 +6,7 @@ import {
   composeRenderProps,
 } from 'react-aria-components';
 
-const inputVariants = cva({
+const _inputVariants = cva({
   base: [
     'rounded-8 min-w-80 max-w-full text-std-16N-7 text-solid-grey-900',
     'bg-white border border-solid-grey-900',
@@ -16,9 +16,9 @@ const inputVariants = cva({
   ],
   variants: {
     size: {
-      small: 'px-4 py-2 text-std-14N-7',
-      medium: 'px-4 py-4 text-std-16N-7',
-      large: 'px-4 py-5 text-std-17N-7',
+      sm: 'px-4 py-2',
+      md: 'px-4 py-4',
+      lg: 'px-4 py-5',
     },
     isFocused: {
       false: 'border-solid-grey-900 forced-colors:border-[ButtonBorder]',
@@ -32,21 +32,23 @@ const inputVariants = cva({
     },
   },
   defaultVariants: {
-    size: 'medium',
+    size: 'md',
   },
 });
 
-const inputStyles = compose(focusRing, inputVariants);
-export interface InputProps extends Omit<_InputProps, 'size'>, VariantProps<typeof inputStyles> {}
+const inputVariants = compose(focusRing, _inputVariants);
+export interface InputProps extends Omit<_InputProps, 'size'>, VariantProps<typeof inputVariants> {}
 
-export function Input(props: InputProps) {
+const Input = (props: InputProps) => {
   const { size, ...rest } = props;
   return (
     <_Input
       {...rest}
       className={composeRenderProps(props.className, (className, renderProps) =>
-        cx(inputStyles({ ...renderProps, size, className })),
+        cx(inputVariants({ ...renderProps, size, className })),
       )}
     />
   );
-}
+};
+
+export { Input, inputVariants };

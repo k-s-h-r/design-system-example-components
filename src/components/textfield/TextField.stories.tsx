@@ -1,6 +1,6 @@
 import { Button } from '@/components';
 import { Description, FieldError, Input, Label, RequirementBadge, TextArea } from '@/components';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta } from '@storybook/react';
 import React from 'react';
 import { Form } from 'react-aria-components';
 import { TextField } from './';
@@ -9,96 +9,89 @@ const meta = {
   title: 'Component/TextField',
   component: TextField,
   tags: ['autodocs'],
+  args: {
+    className: 'flex gap-2 flex-col',
+  },
 } satisfies Meta<typeof TextField>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-export type TextFieldCounterProps = {
-  count: number;
-  maxCount: number;
-  className?: string;
-  id?: string;
-};
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+export const Example = (args: any) => (
+  <div className='flex flex-col gap-8'>
+    <TextField {...args}>
+      <Label>ラベル</Label>
+      <Description>サポートテキスト</Description>
+      <Input />
+    </TextField>
 
-export const Example: Story = {
-  render: () => {
-    return (
-      <div className='flex flex-col gap-8'>
-        <TextField>
-          <Label>ラベル</Label>
-          <Description>サポートテキスト</Description>
-          <Input />
-        </TextField>
+    <TextField {...args}>
+      <Label>
+        ラベル<RequirementBadge isOptional={true}>任意</RequirementBadge>
+      </Label>
+      <Description>サポートテキスト</Description>
+      <Input />
+    </TextField>
 
-        <TextField>
-          <Label>
-            ラベル<RequirementBadge isOptional={true}>任意</RequirementBadge>
-          </Label>
-          <Description>サポートテキスト</Description>
-          <Input />
-        </TextField>
-
-        <TextField>
-          <Label>
-            ラベル<RequirementBadge isOptional={true}>任意</RequirementBadge>
-          </Label>
-          <Description>サポートテキスト</Description>
-          <TextArea rows={5} />
-        </TextField>
-
-        <TextField
-          isRequired
-          defaultValue='入力済の内容が入ります。入力済の内容が入ります。入力済の内容が入ります。'
-        >
-          <Label>
-            ラベル<RequirementBadge>※必須</RequirementBadge>
-          </Label>
-          <Description>サポートテキスト</Description>
-          <Input />
-        </TextField>
-
-        <TextField isInvalid={true} aria-invalid={true} isRequired>
-          <Label>
-            ラベル<RequirementBadge>※必須</RequirementBadge>
-          </Label>
-          <Description>サポートテキスト</Description>
-          <Input />
-          <FieldError>＊エラーテキスト</FieldError>
-        </TextField>
-
-        <TextField isDisabled={true}>
-          <Label>ラベル</Label>
-          <Description>サポートテキスト</Description>
-          <Input />
-          <TextField />
-        </TextField>
-      </div>
-    );
-  },
-};
-
-export const Textarea: Story = {
-  render: () => (
-    <TextField>
+    <TextField {...args}>
       <Label>
         ラベル<RequirementBadge isOptional={true}>任意</RequirementBadge>
       </Label>
       <Description>サポートテキスト</Description>
       <TextArea rows={5} />
     </TextField>
-  ),
-};
 
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-export const Validation = (args: any) => (
-  <Form className='flex flex-col gap-2 items-start'>
-    <TextField isRequired>
+    <TextField
+      isRequired
+      defaultValue='入力済の内容が入ります。入力済の内容が入ります。入力済の内容が入ります。'
+      {...args}
+    >
       <Label>
         ラベル<RequirementBadge>※必須</RequirementBadge>
       </Label>
       <Description>サポートテキスト</Description>
       <Input />
+    </TextField>
+
+    <TextField isInvalid={true} aria-invalid={true} isRequired {...args}>
+      <Label>
+        ラベル<RequirementBadge>※必須</RequirementBadge>
+      </Label>
+      <Description>サポートテキスト</Description>
+      <Input />
+      <FieldError>＊エラーテキスト</FieldError>
+    </TextField>
+
+    <TextField isDisabled={true} {...args}>
+      <Label>ラベル</Label>
+      <Description>サポートテキスト</Description>
+      <Input />
+      <TextField />
+    </TextField>
+  </div>
+);
+
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+export const Textarea = (args: any) => (
+  <TextField {...args}>
+    <Label>
+      ラベル<RequirementBadge isOptional={true}>任意</RequirementBadge>
+    </Label>
+    <Description>サポートテキスト</Description>
+    <TextArea rows={5} />
+  </TextField>
+);
+
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+export const Validation = (args: any) => (
+  <Form className='flex flex-col gap-2 items-start'>
+    <TextField isRequired {...args}>
+      <Label>
+        ラベル<RequirementBadge>※必須</RequirementBadge>
+      </Label>
+      <Description>サポートテキスト</Description>
+      <Input />
+      <FieldError />
     </TextField>
     <Button type='submit' variant='secondary'>
       Submit

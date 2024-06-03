@@ -1,5 +1,5 @@
 import { TextField } from '@/components';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta } from '@storybook/react';
 import React from 'react';
 import { FieldError } from './FieldError';
 
@@ -10,16 +10,12 @@ const meta = {
 } satisfies Meta<typeof FieldError>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-export const Example: Story = {
-  render: () => {
-    return (
-      <div className='flex flex-col gap-8'>
-        <TextField isInvalid>
-          <FieldError>＊エラーテキスト</FieldError>
-        </TextField>
-      </div>
-    );
-  },
-};
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+export const Example = (args: any) => (
+  <div className='flex flex-col gap-8'>
+    <TextField isInvalid>
+      <FieldError>＊エラーテキスト</FieldError>
+    </TextField>
+  </div>
+);

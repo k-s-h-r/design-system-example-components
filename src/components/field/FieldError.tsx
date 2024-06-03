@@ -6,7 +6,7 @@ import {
   composeRenderProps,
 } from 'react-aria-components';
 
-export function FieldError(props: FieldErrorProps) {
+const FieldError = (props: FieldErrorProps) => {
   return (
     <_FieldError
       {...props}
@@ -15,4 +15,6 @@ export function FieldError(props: FieldErrorProps) {
       )}
     />
   );
-}
+};
+
+export { FieldError };

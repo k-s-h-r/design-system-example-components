@@ -1,5 +1,4 @@
-import { Description, FieldError, Label, RequirementBadge } from '@/components';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta } from '@storybook/react';
 import React from 'react';
 import { Radio, RadioGroup } from './';
 
@@ -7,77 +6,59 @@ const meta = {
   title: 'Component/Radio',
   component: Radio,
   tags: ['autodocs'],
+  args: {},
 } satisfies Meta<typeof Radio>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-export const Example: Story = {
-  args: {
-    value: '1',
-  },
-  render: () => {
-    return (
-      <RadioGroup>
-        <Label>
-          ラベル<RequirementBadge isOptional={true}>任意</RequirementBadge>
-        </Label>
-        <div className='flex flex-col'>
-          <Radio value='1'>選択肢1</Radio>
-          <Radio value='2'>選択肢2</Radio>
-          <Radio value='3'>選択肢3</Radio>
-        </div>
-      </RadioGroup>
-    );
-  },
-};
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+export const Example = (args: any) => (
+  <div className='flex flex-col gap-1'>
+    <RadioGroup {...args} defaultValue={'1'}>
+      <Radio value='1'>選択肢1</Radio>
+      <Radio value='2'>選択肢2</Radio>
+      <Radio value='x'>選択肢3</Radio>
+    </RadioGroup>
+  </div>
+);
 
-export const Disabled: Story = {
-  args: {
-    value: '1',
-  },
-  render: () => {
-    return (
-      <RadioGroup>
-        <Label>
-          ラベル<RequirementBadge isOptional={true}>任意</RequirementBadge>
-        </Label>
-        <div className='flex flex-col'>
-          <Radio value='1'>選択肢1</Radio>
-          <Radio value='2' isDisabled={true}>
-            選択肢2
-          </Radio>
-          <Radio value='3' isDisabled={true}>
-            選択肢3
-          </Radio>
-        </div>
-      </RadioGroup>
-    );
-  },
-};
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+export const Disabeld = (args: any) => (
+  <RadioGroup {...args} isDisabled defaultValue={'1'}>
+    <Radio value='1'>選択肢</Radio>
+    <Radio value='2'>選択肢</Radio>
+  </RadioGroup>
+);
 
-export const Size: Story = {
-  args: {
-    value: '1',
-  },
-  render: () => {
-    return (
-      <RadioGroup>
-        <Label>
-          ラベル<RequirementBadge isOptional={true}>任意</RequirementBadge>
-        </Label>
-        <div className='flex flex-col'>
-          <Radio size='small' value='1'>
-            smaill
-          </Radio>
-          <Radio size='medium' value='2'>
-            medium
-          </Radio>
-          <Radio size='large' value='3'>
-            large
-          </Radio>
-        </div>
-      </RadioGroup>
-    );
-  },
-};
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+export const Invalid = (args: any) => (
+  <RadioGroup {...args} isInvalid defaultValue={'1'}>
+    <Radio value='1'>選択肢</Radio>
+    <Radio value='2'>選択肢</Radio>
+  </RadioGroup>
+);
+
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+export const Readonly = (args: any) => (
+  <RadioGroup {...args} isReadOnly defaultValue={'1'}>
+    <Radio value='1'>選択肢</Radio>
+    <Radio value='2'>選択肢</Radio>
+  </RadioGroup>
+);
+
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+export const Size = (args: any) => (
+  <div className='flex flex-col gap-1'>
+    <RadioGroup {...args}>
+      <Radio value='1' size='sm'>
+        smaill
+      </Radio>
+      <Radio value='2' size='md'>
+        medium
+      </Radio>
+      <Radio value='x' size='lg'>
+        large
+      </Radio>
+    </RadioGroup>
+  </div>
+);

@@ -7,37 +7,37 @@ const labelVariants = cva({
   base: 'flex w-fit items-center gap-2 text-dns-16B- text-solid-grey-9002',
   variants: {
     size: {
-      small: 'text-dns-16N-2',
-      medium: 'text-dns-17N-2',
-      large: 'text-std-18N-6',
+      sm: 'text-dns-16N-2',
+      md: 'text-dns-17N-2',
+      lg: 'text-std-18N-6',
     },
     bold: {
       true: '',
       false: '',
     },
     isDisabled: {
-      true: 'text-solid-grey-420',
+      true: 'text-solid-grey-400',
     },
   },
   compoundVariants: [
     {
-      size: 'small',
+      size: 'sm',
       bold: true,
       className: 'text-dns-16B-2',
     },
     {
-      size: 'medium',
+      size: 'md',
       bold: true,
       className: 'text-dns-17B-2',
     },
     {
-      size: 'large',
+      size: 'lg',
       bold: true,
       className: 'text-std-18B-6',
     },
   ],
   defaultVariants: {
-    size: 'small',
+    size: 'sm',
     bold: false,
   },
 });

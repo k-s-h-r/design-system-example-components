@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta } from '@storybook/react';
 import React from 'react';
-import { RequirementBadge } from './RequirementBadge';
+import { RequirementBadge } from './';
 
 const meta = {
   title: 'Component/RequirementBadge',
@@ -9,15 +9,17 @@ const meta = {
 } satisfies Meta<typeof RequirementBadge>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-export const Example: Story = {
-  render: () => {
-    return (
-      <div className='flex flex-col gap-8'>
-        <RequirementBadge>※必須</RequirementBadge>
-        <RequirementBadge isOptional={true}>任意</RequirementBadge>
-      </div>
-    );
-  },
-};
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+export const Example = (args: any) => (
+  <div className='flex flex-col gap-8'>
+    <RequirementBadge {...args}>※必須</RequirementBadge>
+  </div>
+);
+
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+export const Optional = (args: any) => (
+  <div className='flex flex-col gap-8'>
+    <RequirementBadge isOptional={true}>任意</RequirementBadge>
+  </div>
+);
