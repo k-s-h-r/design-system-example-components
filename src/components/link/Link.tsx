@@ -13,7 +13,7 @@ const _linkVariants = cva({
     'visited:text-magenta-900',
     'hover:text-blue-900',
     'pressed:text-orange-700',
-    'disabled:no-underline disabled:pointer-events-none disabled:text-solid-grey-420',
+    'disabled:no-underline disabled:pointer-events-none disabled:text-solid-grey-400',
   ],
   variants: {},
   defaultVariants: {},

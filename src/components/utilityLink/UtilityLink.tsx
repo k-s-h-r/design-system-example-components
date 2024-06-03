@@ -11,7 +11,7 @@ const _linkVariants = cva({
   base: [
     'text-solid-grey-900 text-std-16N-7 underline underline-offset-2',
     'hover:decoration-[3px] hover:underline-solid-grey-800',
-    'disabled:no-underline disabled:pointer-events-none disabled:text-solid-grey-420',
+    'disabled:no-underline disabled:pointer-events-none disabled:text-solid-grey-400',
   ],
   variants: {},
   defaultVariants: {},

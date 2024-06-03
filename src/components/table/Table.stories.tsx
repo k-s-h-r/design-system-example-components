@@ -314,7 +314,7 @@ export const TableHeaderWithColspan: Story = {
   render: () => {
     return (
       <div className='flex flex-col px-4'>
-        <Table className='w-full min-w-max border border-solid-grey-420'>
+        <Table className='w-full min-w-max border border-solid-grey-400'>
           <caption className='p-4 font-bold'>
             テーブルヘッダーがcolspanで列結合され、階層化されたパターン
           </caption>
@@ -384,7 +384,7 @@ export const TableHeaderWithRowspan: Story = {
   render: () => {
     return (
       <div className='flex flex-col px-4'>
-        <Table className='w-full min-w-max border border-solid-grey-420 [&_th]:border-r'>
+        <Table className='w-full min-w-max border border-solid-grey-400 [&_th]:border-r'>
           <caption className='p-4 font-bold'>1列目が見出しセル</caption>
           <Tbody>
             <Tr>

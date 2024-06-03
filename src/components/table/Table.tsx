@@ -38,7 +38,7 @@ export const Tr = (props: TrProps) => {
   return <tr {...rest}>{children}</tr>;
 };
 
-const commonCellStyles = 'border-b border-solid-grey-420 px-4 py-6 text-left text-solid-grey-900';
+const commonCellStyles = 'border-b border-solid-grey-400 px-4 py-6 text-left text-solid-grey-900';
 
 export const thStyle = `${commonCellStyles}`;
 

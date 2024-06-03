@@ -46,7 +46,7 @@ export const Compact: Story = {
     return (
       <>
         <h2 className='mb-8 text-std-32B-5'>コンパクトなアコーディオン</h2>
-        <div className='flex w-96 flex-col text-std-16N-7 [&>*]:border-b [&>*]:border-solid-grey-420'>
+        <div className='flex w-96 flex-col text-std-16N-7 [&>*]:border-b [&>*]:border-solid-grey-400'>
           <Accordion>
             <AccordionSummary className='p-1'>
               <h3 className='font-medium'>ダミーテキストはどのような場合に使用されますか。</h3>

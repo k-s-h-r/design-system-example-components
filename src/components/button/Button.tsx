@@ -24,13 +24,13 @@ const _buttonVariants = cva({
         '!border-blue-900 bg-white text-blue-900',
         'hover:!border-blue-1000 hover:bg-blue-200 hover:text-blue-1000 hover:underline',
         'pressed:!border-blue-1100 pressed:bg-blue-300 pressed:text-blue-1200 pressed:underline',
-        'disabled:!border-solid-grey-420 disabled:bg-white disabled:text-solid-grey-420',
+        'disabled:!border-solid-grey-400 disabled:bg-white disabled:text-solid-grey-400',
       ],
       tertiary: [
         'bg-transparent text-blue-900 underline',
         'hover:bg-blue-200 hover:text-blue-1000',
         'pressed:bg-blue-300 pressed:text-blue-1200',
-        'disabled:bg-transparent disabled:text-solid-grey-420',
+        'disabled:bg-transparent disabled:text-solid-grey-400',
       ],
     },
     size: {

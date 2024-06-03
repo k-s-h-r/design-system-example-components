@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { useButton, useFocusRing } from 'react-aria';
 
 const accordionVariants = cva({
-  base: ['group border-b border-solid-grey-420'],
+  base: ['group border-b border-solid-grey-400'],
   variants: {},
   defaultVariants: {},
 });
