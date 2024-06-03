@@ -7,7 +7,7 @@ export { Dialog } from './dialog/Dialog';
 export { HamburgerButton } from './hamburgerButton/HamburgerButton';
 export { Label, FieldGroup, Input, TextArea, FieldError, Description } from './Field';
 export { Link, linkVariants } from './Link';
-export { Ol, olStyle } from './ol/Ol';
+export { Ol, olVariants } from './Ol';
 export {
   Pagination,
   PaginationItem,
@@ -25,5 +25,5 @@ export { ScrollToTopButton, scrollToTopButtonStyle } from './scrollToTopButton/S
 export { Select, SelectItem, SelectSection } from './Select';
 export { Table, Thead, Tbody, Tr, Th, Td, thStyle, tdStyle } from './table/Table';
 export { TextField } from './TextField';
-export { Ul, ulStyle } from './ul/Ul';
+export { Ul, ulVariants } from './Ul';
 export { UtilityLink, utilityLinkVariants } from './UtilityLink';
