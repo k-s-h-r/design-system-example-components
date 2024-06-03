@@ -21,7 +21,7 @@ export {
 } from './pagination/Pagination';
 export { Radio } from './Radio';
 export { RequirementBadge } from './RequirementBadge';
-export { ScrollToTopButton, scrollToTopButtonStyle } from './scrollToTopButton/ScrollToTopButton';
+export { ScrollToTopButton, scrollToTopButtonVariants } from './ScrollToTopButton';
 export { Select, SelectItem, SelectSection } from './Select';
 export { Table, Thead, Tbody, Tr, Th, Td, thStyle, tdStyle } from './table/Table';
 export { TextField } from './TextField';
