@@ -65,7 +65,7 @@ export const Separator = (args: any) => (
     <SelectPopover>
       <SelectContent>
         <SelectItem>Chocolate</SelectItem>
-        <SelectItem id='mint'>Mint</SelectItem>
+        <SelectItem>Mint</SelectItem>
         <SelectSeparator />
         <SelectItem>Strawberry</SelectItem>
         <SelectSeparator />
