@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { Ol } from '../ol/Ol';
+import { Ol } from '../Ol';
 import { Table, Tbody, Td, Th, Thead, Tr } from './Table';
 
 const meta = {
-  title: 'Component/Table',
+  title: 'Component/Table（未調整）',
   component: Table,
   tags: ['autodocs'],
 } satisfies Meta<typeof Table>;

@@ -5,7 +5,7 @@ import { Button } from '../';
 import { Dialog, DialogBody } from './Dialog';
 
 const meta = {
-  title: 'Component/Dialog（未作成）',
+  title: 'Component/Dialog（未調整）',
   component: Dialog,
   tags: ['autodocs'],
 } satisfies Meta<typeof Dialog>;
@@ -19,7 +19,7 @@ export const Example: Story = {
       const dialogRef = useRef<HTMLDialogElement>(null);
       return (
         <div>
-          <Button onClick={() => dialogRef.current?.showModal()} size='lg' variant='primary'>
+          <Button onPress={() => dialogRef.current?.showModal()} size='lg' variant='primary'>
             ダイアログ表示
           </Button>
 
@@ -33,7 +33,7 @@ export const Example: Story = {
               </p>
               <div className='mt-2 flex w-full max-w-xs flex-col gap-4 desktop:mt-6'>
                 <Button
-                  onClick={() => {
+                  onPress={() => {
                     dialogRef.current?.close();
                   }}
                   size='lg'
@@ -42,7 +42,7 @@ export const Example: Story = {
                   中断する
                 </Button>
                 <Button
-                  onClick={() => {
+                  onPress={() => {
                     dialogRef.current?.close();
                   }}
                   size='lg'
@@ -67,7 +67,7 @@ export const DialogWithHorizontalActions: Story = {
 
       return (
         <div>
-          <Button onClick={() => dialogRef.current?.showModal()} size='lg' variant='primary'>
+          <Button onPress={() => dialogRef.current?.showModal()} size='lg' variant='primary'>
             ダイアログ表示
           </Button>
 
@@ -81,7 +81,7 @@ export const DialogWithHorizontalActions: Story = {
               </p>
               <div className='mt-2 flex w-full flex-col gap-4 desktop:mt-6 desktop:flex-row-reverse'>
                 <Button
-                  onClick={() => {
+                  onPress={() => {
                     dialogRef.current?.close();
                   }}
                   size='lg'
@@ -90,7 +90,7 @@ export const DialogWithHorizontalActions: Story = {
                   確定する
                 </Button>
                 <Button
-                  onClick={() => {
+                  onPress={() => {
                     dialogRef.current?.close();
                   }}
                   size='lg'
@@ -100,7 +100,7 @@ export const DialogWithHorizontalActions: Story = {
                 </Button>
                 <Button
                   className='desktop:mr-auto'
-                  onClick={() => {
+                  onPress={() => {
                     dialogRef.current?.close();
                   }}
                   size='lg'
@@ -125,7 +125,7 @@ export const AlertDialog: Story = {
 
       return (
         <div>
-          <Button onClick={() => dialogRef.current?.showModal()} size='lg' variant='primary'>
+          <Button onPress={() => dialogRef.current?.showModal()} size='lg' variant='primary'>
             アラートダイアログ表示
           </Button>
 
@@ -139,7 +139,7 @@ export const AlertDialog: Story = {
               </p>
               <div className='mt-2 flex w-full flex-col gap-4 desktop:mt-6 desktop:flex-row-reverse'>
                 <Button
-                  onClick={() => {
+                  onPress={() => {
                     dialogRef.current?.close();
                   }}
                   size='md'

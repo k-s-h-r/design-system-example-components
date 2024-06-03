@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { HamburgerButton } from './HamburgerButton';
 
 const meta = {
-  title: 'Component/HamburgerButton',
+  title: 'Component/HamburgerButton（未調整）',
   component: HamburgerButton,
   tags: ['autodocs'],
   argTypes: {

@@ -3,7 +3,7 @@ import React from 'react';
 import { BreadcrumbItem, BreadcrumbLink, Breadcrumbs } from './Breadcrumbs';
 
 const meta = {
-  title: 'Component/Breadcrumbs',
+  title: 'Component/Breadcrumbs（未調整）',
   component: Breadcrumbs,
   tags: ['autodocs'],
 } satisfies Meta<typeof Breadcrumbs>;
