@@ -1,5 +1,5 @@
 export { Accordion, AccordionSummary, AccordionDefaultIcon } from './Accordion';
-export { Breadcrumbs, BreadcrumbItem } from './breadcrumbs/Breadcrumbs';
+export { Breadcrumb, BreadcrumbItem } from './Breadcrumb';
 export { Button, buttonVariants, type ButtonProps } from './Button';
 export { ButtonLink } from './ButtonLink';
 export { Checkbox } from './Checkbox';
@@ -14,7 +14,7 @@ export {
 } from './Dialog';
 export { HamburgerButton } from './HamburgerButton';
 export { Label, FieldGroup, Input, TextArea, FieldError, Description } from './Field';
-export { Link, linkVariants } from './Link';
+export { Link, linkVariants, type LinkProps } from './Link';
 export { Ol, olVariants } from './Ol';
 export { Pagination } from './Pagination';
 export { Radio } from './Radio';
