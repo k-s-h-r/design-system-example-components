@@ -3,7 +3,15 @@ export { Breadcrumbs, BreadcrumbItem } from './breadcrumbs/Breadcrumbs';
 export { Button, buttonVariants } from './Button';
 export { ButtonLink } from './ButtonLink';
 export { Checkbox } from './Checkbox';
-export { Dialog } from './dialog/Dialog';
+export {
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogOverlay,
+  DialogTitle,
+  DialogTrigger,
+} from './Dialog';
 export { HamburgerButton } from './hamburgerButton/HamburgerButton';
 export { Label, FieldGroup, Input, TextArea, FieldError, Description } from './Field';
 export { Link, linkVariants } from './Link';
