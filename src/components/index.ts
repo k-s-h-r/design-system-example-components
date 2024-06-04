@@ -1,6 +1,6 @@
 export { Accordion, AccordionSummary, AccordionDefaultIcon } from './Accordion';
 export { Breadcrumbs, BreadcrumbItem } from './breadcrumbs/Breadcrumbs';
-export { Button, buttonVariants } from './Button';
+export { Button, buttonVariants, type ButtonProps } from './Button';
 export { ButtonLink } from './ButtonLink';
 export { Checkbox } from './Checkbox';
 export {
@@ -16,17 +16,7 @@ export { HamburgerButton } from './HamburgerButton';
 export { Label, FieldGroup, Input, TextArea, FieldError, Description } from './Field';
 export { Link, linkVariants } from './Link';
 export { Ol, olVariants } from './Ol';
-export {
-  Pagination,
-  PaginationItem,
-  PaginationFirst,
-  PaginationLast,
-  PaginationPrev,
-  PaginationNext,
-  PaginationCurrent,
-  PaginationEllipsis,
-  paginationItemStyle,
-} from './pagination/Pagination';
+export { Pagination } from './Pagination';
 export { Radio } from './Radio';
 export { RequirementBadge } from './RequirementBadge';
 export { ScrollToTopButton, scrollToTopButtonVariants } from './ScrollToTopButton';
