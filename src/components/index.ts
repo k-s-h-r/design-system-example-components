@@ -23,7 +23,7 @@ export { Radio } from './Radio';
 export { RequirementBadge } from './RequirementBadge';
 export { ScrollToTopButton, scrollToTopButtonVariants } from './ScrollToTopButton';
 export { Select, SelectItem, SelectSection } from './Select';
-export { Table, Thead, Tbody, Tr, Th, Td, thStyle, tdStyle } from './table/Table';
+export { Table, Thead, Tbody, Tr, Th, Td, thVariants, tdVariants } from './Table';
 export { TextField } from './TextField';
 export { Ul, ulVariants } from './Ul';
 export { UtilityLink, utilityLinkVariants } from './UtilityLink';
