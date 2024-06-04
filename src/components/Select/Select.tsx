@@ -92,9 +92,9 @@ function SelectTrigger({
       )}
       {...props}
     >
-      {(values) => (
+      {composeRenderProps(children, (children, values) => (
         <>
-          {typeof children === 'function' ? children(values) : children}
+          {children}
           <svg
             className='w-4 h-4 text-solid-grey-900 fill-current dark:text-zinc-400 forced-colors:text-[ButtonText] group-disabled:text-solid-grey-400 dark:group-disabled:text-zinc-600 forced-colors:group-disabled:text-[GrayText]'
             aria-hidden={true}
@@ -102,12 +102,11 @@ function SelectTrigger({
             height='16'
             viewBox='0 0 16 16'
             fill='none'
-            xmlns='http://www.w3.org/2000/svg'
           >
             <path d='M8 11.4L2 5.33334L2.66667 4.66667L8 10L13.3333 4.66667L14 5.33334L8 11.4Z' />
           </svg>
         </>
-      )}
+      ))}
     </Button>
   );
 }
