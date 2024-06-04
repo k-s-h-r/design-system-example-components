@@ -12,7 +12,7 @@ export {
   DialogTitle,
   DialogTrigger,
 } from './Dialog';
-export { HamburgerButton } from './hamburgerButton/HamburgerButton';
+export { HamburgerButton } from './HamburgerButton';
 export { Label, FieldGroup, Input, TextArea, FieldError, Description } from './Field';
 export { Link, linkVariants } from './Link';
 export { Ol, olVariants } from './Ol';

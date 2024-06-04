@@ -1,16 +1,22 @@
-import type { ComponentProps } from 'react';
+import { useContext } from 'react';
+import { Button, type ButtonProps, OverlayTriggerStateContext } from 'react-aria-components';
 
-type HamburgerButtonProps = ComponentProps<'button'> & {
-  label: string;
-  isOpen: boolean;
+type HamburgerButtonProps = ButtonProps & {
+  label: {
+    open: string;
+    close?: string;
+  };
   align: 'row' | 'col';
 };
 
 export const HamburgerButton = (props: HamburgerButtonProps) => {
-  const { label, isOpen, align, className, ...rest } = props;
+  const { label, align, className, ...rest } = props;
+  const state = useContext(OverlayTriggerStateContext);
+  const isOpen = state?.isOpen ?? false;
+  const dispLabel = isOpen ? label.close ?? label.open : label.open;
 
   return (
-    <button
+    <Button
       aria-label={rest['aria-label'] ?? isOpen ? 'メニューを閉じる' : 'メニューを開く'}
       className={`
         flex w-fit items-center touch-manipulation rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-yellow
@@ -36,7 +42,7 @@ export const HamburgerButton = (props: HamburgerButtonProps) => {
           />
         </svg>
       )}
-      <span className={align === 'row' ? 'text-[0.75rem]' : 'text-[0.625rem]'}>{label}</span>
-    </button>
+      <span className={align === 'row' ? 'text-[0.75rem]' : 'text-[0.625rem]'}>{dispLabel}</span>
+    </Button>
   );
 };
