@@ -1,6 +1,5 @@
 import { compose, cva, cx, focusRing } from '@/lib/cva';
 import type { VariantProps } from 'cva';
-import { forwardRef } from 'react';
 import {
   Button as _Button,
   type ButtonProps as _ButtonProps,
@@ -62,7 +61,7 @@ export interface ButtonProps
 */
 export interface ButtonProps extends _ButtonProps, VariantProps<typeof buttonVariants> {}
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+const Button = (props: ButtonProps) => {
   const { className, variant, size, ...rest } = props;
 
   return (
@@ -71,11 +70,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
         cx(buttonVariants({ ...renderProps, variant, size, className })),
       )}
       {...rest}
-      ref={ref}
     />
   );
-});
-
-Button.displayName = 'Button';
+};
 
 export { Button, buttonVariants };
