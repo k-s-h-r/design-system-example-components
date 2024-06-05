@@ -1,6 +1,5 @@
 import { compose, cva, cx, focusRing } from '@/lib/cva';
 import type { VariantProps } from 'cva';
-import { forwardRef } from 'react';
 import {
   Link as _Link,
   type LinkProps as _LinkProps,
@@ -9,13 +8,18 @@ import {
 
 const _linkVariants = cva({
   base: [
-    'rounded text-blue-1000 underline',
-    'visited:text-magenta-900',
-    'hover:text-blue-900',
-    'pressed:text-orange-700',
+    'rounded',
     'disabled:no-underline disabled:pointer-events-none disabled:text-solid-grey-400',
   ],
-  variants: {},
+  variants: {
+    hasHref: {
+      true: [
+        'text-blue-1000 underline underline-offset-2 hover:decoration-[3px]',
+        'visited:text-magenta-900',
+        'pressed:text-orange-700',
+      ],
+    },
+  },
   defaultVariants: {},
 });
 
@@ -28,16 +32,16 @@ export interface LinkProps extends _LinkProps, VariantProps<typeof linkVariants>
   };
 }
 
-const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
+const Link = (props: LinkProps) => {
   const { className, children, icon, ...rest } = props;
+  const hasHref = Boolean(props.href);
 
   return (
     <_Link
       className={composeRenderProps(className, (className, renderProps) =>
-        cx(linkVariants({ ...renderProps, className })),
+        cx(linkVariants({ ...renderProps, hasHref, className })),
       )}
       {...rest}
-      ref={ref}
     >
       {composeRenderProps(children, (children) => (
         <>
@@ -66,8 +70,6 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
       ))}
     </_Link>
   );
-});
-
-Link.displayName = 'Link';
+};
 
 export { Link, linkVariants };

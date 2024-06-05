@@ -1,6 +1,5 @@
 import { compose, cva, cx, focusRing } from '@/lib/cva';
 import type { VariantProps } from 'cva';
-import { forwardRef } from 'react';
 import {
   Link as _Link,
   type LinkProps as _LinkProps,
@@ -8,12 +7,12 @@ import {
 } from 'react-aria-components';
 
 const _linkVariants = cva({
-  base: [
-    'text-solid-grey-900 text-std-16N-7 underline underline-offset-2',
-    'hover:decoration-[3px] hover:underline-solid-grey-800',
-    'disabled:no-underline disabled:pointer-events-none disabled:text-solid-grey-400',
-  ],
-  variants: {},
+  base: ['disabled:no-underline disabled:pointer-events-none disabled:text-solid-grey-400'],
+  variants: {
+    hasHref: {
+      true: ['text-solid-grey-800 underline underline-offset-2 hover:decoration-[3px]'],
+    },
+  },
   defaultVariants: {},
 });
 
@@ -26,16 +25,16 @@ export interface LinkProps extends _LinkProps, VariantProps<typeof utilityLinkVa
   };
 }
 
-const UtilityLink = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
+const UtilityLink = (props: LinkProps) => {
   const { className, children, icon, ...rest } = props;
+  const hasHref = Boolean(props.href);
 
   return (
     <_Link
       className={composeRenderProps(className, (className, renderProps) =>
-        cx(utilityLinkVariants({ ...renderProps, className })),
+        cx(utilityLinkVariants({ ...renderProps, hasHref, className })),
       )}
       {...rest}
-      ref={ref}
     >
       {composeRenderProps(children, (children) => (
         <>
@@ -64,8 +63,6 @@ const UtilityLink = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
       ))}
     </_Link>
   );
-});
-
-UtilityLink.displayName = 'UtilityLink';
+};
 
 export { UtilityLink, utilityLinkVariants };
