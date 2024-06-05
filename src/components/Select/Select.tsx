@@ -28,7 +28,7 @@ const _selectButtonVariants = cva({
     'h-auto',
     'flex-1 min-w-0',
     'disabled:text-solid-grey-200 disabled:bg-solid-grey-50 disabled:border-solid-grey-400',
-    'pressed:border-focus-yellow pressed:forced-colors:border-[Highlight]',
+    'pressed:border-focus-yellow pressed:',
   ],
   variants: {
     size: {
@@ -37,15 +37,15 @@ const _selectButtonVariants = cva({
       lg: 'px-4 py-5',
     },
     isFocused: {
-      false: 'border-solid-grey-900 forced-colors:border-[ButtonBorder]',
-      true: 'border-focus-yellow forced-colors:border-[Highlight]',
+      false: 'border-solid-grey-900',
+      true: 'border-focus-yellow',
     },
     isInvalid: {
-      true: 'border-error-1 border-2 forced-colors:border-[Mark]',
+      true: 'border-error-1 border-2',
     },
     isDisabled: {
       false: '',
-      true: 'border-solid-grey-200 forced-colors:border-[GrayText]',
+      true: 'border-solid-grey-200',
     },
   },
   defaultVariants: {
@@ -96,7 +96,7 @@ function SelectTrigger({
         <>
           {children}
           <svg
-            className='w-4 h-4 text-solid-grey-900 fill-current dark:text-zinc-400 forced-colors:text-[ButtonText] group-disabled:text-solid-grey-400 dark:group-disabled:text-zinc-600 forced-colors:group-disabled:text-[GrayText]'
+            className='w-4 h-4 text-solid-grey-900 fill-current group-disabled:text-solid-grey-400 '
             aria-hidden={true}
             width='16'
             height='16'

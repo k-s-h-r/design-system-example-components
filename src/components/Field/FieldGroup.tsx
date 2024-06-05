@@ -3,14 +3,14 @@ import { Group, type GroupProps, composeRenderProps } from 'react-aria-component
 
 export const fieldBorderStylesVariants = {
   isFocusWithin: {
-    false: 'border-solid-grey-900 forced-colors:border-[ButtonBorder]',
-    true: 'border-focus-yellow forced-colors:border-[Highlight]',
+    false: 'border-solid-grey-900',
+    true: 'border-focus-yellow',
   },
   isInvalid: {
-    true: 'border-error-1 forced-colors:border-[Mark]',
+    true: 'border-error-1',
   },
   isDisabled: {
-    true: 'border-solid-grey-200 forced-colors:border-[GrayText]',
+    true: 'border-solid-grey-200',
   },
 };
 export const fieldBorderStyles = cva({
@@ -18,7 +18,7 @@ export const fieldBorderStyles = cva({
 });
 
 const _fieldGroupVariants = cva({
-  base: 'group flex items-center h-9 bg-white forced-colors:bg-[Field] border rounded-lg overflow-hidden',
+  base: 'group flex items-center h-9 bg-white',
 });
 
 export const fieldGroupVariants = compose(focusRing, _fieldGroupVariants, fieldBorderStyles);

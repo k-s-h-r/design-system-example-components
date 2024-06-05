@@ -15,14 +15,14 @@ const _inputVariants = cva({
   ],
   variants: {
     isFocused: {
-      false: 'border-solid-grey-900 forced-colors:border-[ButtonBorder]',
-      true: 'border-focus-yellow forced-colors:border-[Highlight]',
+      false: 'border-solid-grey-900',
+      true: 'border-focus-yellow',
     },
     isInvalid: {
-      true: 'border-error-1 border-2 forced-colors:border-[Mark]',
+      true: 'border-error-1 border-2',
     },
     isDisabled: {
-      true: 'border-solid-grey-200 forced-colors:border-[GrayText]',
+      true: 'border-solid-grey-200',
     },
   },
 });

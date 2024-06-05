@@ -22,7 +22,7 @@ const RadioGroup = (props: RadioGroupProps) => {
 };
 
 const _radioVariants = cva({
-  base: 'flex gap-2 items-center group text-sm transition ',
+  base: 'flex gap-2 items-center group text-sm transition',
   variants: {
     size: {
       sm: '[--size:19px] [--inner:9px] text-std-16N-7',
@@ -64,7 +64,7 @@ const _boxVariants = cva({
       true: [
         '[--color:theme(colors.blue.900)]',
         'group-pressed:[--color:theme(colors.blue.1000)]',
-        'forced-colors:![--color:Highlight]',
+        '',
         'border-[--color]',
         'before:block before:size-[--inner] before:rounded-full before:bg-[--color]',
       ],
@@ -73,11 +73,11 @@ const _boxVariants = cva({
       true: [
         '[--color:theme(colors.error-1)]',
         'group-pressed:[--color:theme(colors.error-1)]',
-        'forced-colors:![--color:Mark]',
+        '',
       ],
     },
     isDisabled: {
-      true: ['[--color:theme(colors.solid-grey.200)]', 'forced-colors:![--color:GrayText]'],
+      true: ['[--color:theme(colors.solid-grey.200)]', ''],
     },
   },
 });
