@@ -95,6 +95,17 @@ const SvgCheck = (props: { className: string }) => (
     />
   </svg>
 );
+const SvgIndeterminate = (props: { className: string }) => (
+  <svg
+    aria-hidden={true}
+    className={cx('fill-current', props.className)}
+    width='23'
+    height='23'
+    viewBox='0 0 23 23'
+  >
+    <path d='M5.07324 12.5147H17.9262V10.4854H5.07324V12.5147Z'></path>
+  </svg>
+);
 
 const Checkbox = (props: CheckboxProps) => {
   const { size, ...rest } = props;
@@ -111,7 +122,7 @@ const Checkbox = (props: CheckboxProps) => {
             className={boxVariants({ isSelected: isSelected || isIndeterminate, ...renderProps })}
           >
             {isIndeterminate ? (
-              <>TODO</>
+              <SvgIndeterminate className={iconVariants} />
             ) : isSelected ? (
               <SvgCheck className={iconVariants} />
             ) : null}
